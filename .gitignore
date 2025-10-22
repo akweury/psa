@@ -220,3 +220,6 @@ data/output/
 
 # Environment files
 .env
+
+# Implementation summary (temporary)
+IMPLEMENTATION_SUMMARY.md
