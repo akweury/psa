@@ -1,0 +1,52 @@
+# PSA Video Processing Configuration
+
+# Video input configuration
+video:
+  # Path to the folder containing videos (external, not in git)
+  input_path: "/app/videos"
+  # Supported video formats
+  formats:
+    - ".mp4"
+    - ".avi"
+    - ".mov"
+    - ".mkv"
+
+# Frame processing configuration
+processing:
+  # Frame sampling rate (process every Nth frame)
+  frame_skip: 1
+  # Maximum frames to process per video (0 = all frames)
+  max_frames: 0
+  # Image resize dimensions (width, height) - null for original size
+  resize: null
+  # Enable frame preprocessing
+  preprocessing:
+    enabled: false
+    # Normalization, grayscale, etc.
+    operations: []
+
+# Output configuration
+output:
+  # Path to save processing results
+  output_path: "/app/data/output"
+  # Save extracted frames
+  save_frames: false
+  # Frames output directory
+  frames_path: "/app/data/output/frames"
+  # Logic rules output format
+  rules_format: "json"  # json, yaml, txt
+  # Include frame metadata in output
+  include_metadata: true
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "/app/data/output/psa.log"
+
+# AI Model configuration (customize based on your model)
+model:
+  # Model type/name
+  type: "custom"
+  # Model-specific parameters
+  parameters: {}

@@ -205,3 +205,21 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# PSA specific - Video files and data
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+*.flv
+*.webm
+videos/
+data/output/
+*.log
+
+# Environment files
+.env
+
+# Implementation summary (temporary)
+IMPLEMENTATION_SUMMARY.md

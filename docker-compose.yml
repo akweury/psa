@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  psa:
+    build: .
+    container_name: psa-video-processor
+    volumes:
+      # Mount external video folder (configure path in .env or here)
+      - ${VIDEO_PATH:-/path/to/videos}:/app/videos:ro
+      # Mount output directory
+      - ./data/output:/app/data/output
+      # Mount config for easy updates
+      - ./config:/app/config
+    environment:
+      - CONFIG_PATH=/app/config/config.yaml
+    restart: unless-stopped
