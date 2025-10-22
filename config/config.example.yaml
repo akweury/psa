@@ -1,0 +1,42 @@
+# PSA Video Processing Configuration Example
+# Copy this file to config.yaml and customize for your setup
+
+# Video input configuration
+video:
+  # Path to the folder containing videos (external, not in git)
+  # For local development: "/home/user/videos"
+  # For Docker: "/app/videos" (mounted via docker-compose.yml)
+  input_path: "/path/to/your/videos"
+  formats:
+    - ".mp4"
+    - ".avi"
+    - ".mov"
+    - ".mkv"
+
+# Frame processing configuration
+processing:
+  frame_skip: 1
+  max_frames: 0
+  resize: null
+  preprocessing:
+    enabled: false
+    operations: []
+
+# Output configuration
+output:
+  output_path: "./data/output"
+  save_frames: false
+  frames_path: "./data/output/frames"
+  rules_format: "json"
+  include_metadata: true
+
+# Logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./data/output/psa.log"
+
+# AI Model configuration
+model:
+  type: "custom"
+  parameters: {}
